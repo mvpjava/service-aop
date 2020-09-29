@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.mvpjava.demo;
 
 import java.security.SecureRandom;
 

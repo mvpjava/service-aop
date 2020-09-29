@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.mvpjava.demo;
 
 public class Product {
 	private String description;
