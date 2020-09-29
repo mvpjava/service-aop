@@ -13,7 +13,11 @@ public class DiscountGenerator implements Discounter {
 	
 	@Override
 	public double calculateDiscountFor(Product product) {
-		return repo.getRandomDiscount();
+		Double discount = repo.getRandomDiscount();
+		if (discount > 0.9)
+			throw new BusinessException();
+		
+		return discount;
 	}
 
 }
