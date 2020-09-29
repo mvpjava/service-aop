@@ -4,10 +4,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DiscountGenerator implements Discounter {
-
+	final DiscountRepository repo;
+	
+	
+	public DiscountGenerator(final DiscountRepository repo) {
+		this.repo = repo;
+	}
+	
 	@Override
-	public double getDiscountFor(Product product) {
-		return 10.0;
+	public double calculateDiscountFor(Product product) {
+		return repo.getRandomDiscount();
 	}
 
 }
