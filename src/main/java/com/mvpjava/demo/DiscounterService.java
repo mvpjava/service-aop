@@ -1,5 +1,5 @@
 package com.mvpjava.demo;
 
-public interface Discounter {
+public interface DiscounterService {
 	double calculateDiscountFor (Product product) throws BusinessException;
 }

@@ -3,11 +3,11 @@ package com.mvpjava.demo;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DiscountGenerator implements Discounter {
+public class DiscountGeneratorService implements DiscounterService {
 	final DiscountRepository repo;
 	
 	
-	public DiscountGenerator(final DiscountRepository repo) {
+	public DiscountGeneratorService(final DiscountRepository repo) {
 		this.repo = repo;
 	}
 	

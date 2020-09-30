@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 public class BootstrapCommandLineRunner implements CommandLineRunner {
 	private static final Logger logger = LoggerFactory.getLogger(DiscountRepository.class);
 	
-	final DiscountGenerator service;
+	final DiscountGeneratorService service;
 	
-	public BootstrapCommandLineRunner (DiscountGenerator service) {
+	public BootstrapCommandLineRunner (DiscountGeneratorService service) {
 		this.service = service;
 	}
 	
