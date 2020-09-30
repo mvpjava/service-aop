@@ -1,8 +1,10 @@
 package com.mvpjava.demo;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
+@Component
 public class DiscountGeneratorService implements DiscounterService {
 	final DiscountRepository repo;
 	

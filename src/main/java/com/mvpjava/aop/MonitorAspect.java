@@ -22,15 +22,28 @@ public class MonitorAspect {
 
 	//@Before("execution(* calculateDiscountFor(*))")
 	//@Before("execution(* com.mvpjava.*.*.*(..))")
-	
-	
-	@Before("@within(org.springframework.stereotype.Service)")
+
+	// 1. match the DiscountGeneratorService and BootstrapCommandLineRunner and possible future additions of @Component thus we need to refine
+	// @Before("@within(org.springframework.stereotype.Component)")
+	// 2. more specific (harder to read, what is * again?)
+	//@Before("execution(* calculateDiscountFor(*)) && @within(org.springframework.stereotype.Component)")
+    // or (but more brittle since if you move Product to another package or
+	// rename method or change return type to BigDecimal then it will break pointcut
+	@Before("execution(double calculateDiscountFor(com.mvpjava.demo.Product)) && @within(org.springframework.stereotype.Component)")
+
 	public void implLogging(JoinPoint joinPoint) {
         logger.info(" advice implementation - " + joinPoint.getTarget().getClass() + //
                     "; Executing before " + joinPoint.getSignature().getName() + //
                     "() method");
-
 	}
+
+	
+//	@Before("@within(org.springframework.stereotype.Service)")
+//	public void implLogging(JoinPoint joinPoint) {
+//        logger.info(" advice implementation - " + joinPoint.getTarget().getClass() + //
+//                    "; Executing before " + joinPoint.getSignature().getName() + //
+//                    "() method");
+//	}
 
 // This reads better
 //
