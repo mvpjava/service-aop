@@ -18,11 +18,12 @@ public class ServiceVsComponentAspect {
 	// @Before("@within(org.springframework.stereotype.Component)")
 	
 	// 2. more specific (harder to read, what is * again?)
-	// @Before("execution(* calculateDiscountFor(*)) &&  @within(org.springframework.stereotype.Component)")
+	// @Before("execution(double calculateDiscountFor(*)) &&  @within(org.springframework.stereotype.Component)")
 	// or (but more brittle since if you move Product to another package or
 	// rename method or change return type to BigDecimal then it will break pointcut
 	// @Before("execution(double calculateDiscountFor(com.mvpjava.demo.Product)) &&  @within(org.springframework.stereotype.Component)")
 
+	//@Before("@within(com.mvpjava.demo.TransactionalService)")
 	@Before("@within(org.springframework.stereotype.Service)")
 	public void implLogging(JoinPoint joinPoint) {
 		logger.info(" Around advice matched Class [" + joinPoint.getSignature().toLongString() + "]");

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 //@Component
+//@TransactionalService
 public class DiscountGeneratorService implements DiscounterService {
 	final DiscountRepository repo;
 	
