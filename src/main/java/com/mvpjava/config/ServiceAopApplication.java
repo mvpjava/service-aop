@@ -8,9 +8,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableAspectJAutoProxy
 public class ServiceAopApplication {
 	
-
 	public static void main(String[] args) {
 		SpringApplication.run(ServiceAopApplication.class, args);
 	}
-
 }

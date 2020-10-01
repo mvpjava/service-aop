@@ -3,8 +3,8 @@ package com.mvpjava.demo;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-//@Service
-@Component
+@Service
+//@Component
 public class DiscountGeneratorService implements DiscounterService {
 	final DiscountRepository repo;
 	
@@ -16,8 +16,9 @@ public class DiscountGeneratorService implements DiscounterService {
 	@Override
 	public double calculateDiscountFor(Product product) {
 		Double discount = repo.getRandomDiscount();
-		if (discount > 0.9)
+		if (discount > 0.9) {
 			throw new BusinessException();
+		}
 		
 		return discount;
 	}
