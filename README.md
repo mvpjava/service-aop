@@ -9,7 +9,7 @@ This tutorial supports Blog post "Component vs @Service in Spring | An Actual An
 
 Blog Post: http://mvpjava.com/component-vs-service-spring/
 
-YouTube Tutorial: TBD
+YouTube Tutorial: https://youtu.be/_bImyniwpBQ
 
 ======================================================
 
